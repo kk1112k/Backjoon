@@ -1,4 +1,4 @@
-package study;
+package ex1;
 
 public class Ex1_10718 {
 

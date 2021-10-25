@@ -1,6 +1,6 @@
-package study;
+package ex1;
 
-public class Ex1_10172 {
+public class Ex1_1330 {
 
 	public static void main(String[] args) {
 		System.out.println("\\    /\\");
