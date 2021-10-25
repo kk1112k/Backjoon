@@ -2,7 +2,7 @@ package ex2;
 
 import java.util.Scanner;
 
-public class Ex2_9498 {
+public class Ex2_94988 {
 
 
 	public static void main(String[] args) {
