@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>BLUEB</title>
+</head>
+
+<body>
+<h5 class="modal_subtit">팀/지역 선택</h5>
+
+<table class="table table-bordered no-padding text-sm">
+    <colgroup>
+        <?
+        if($mobile_flag == 1)
+        {
+        echo "<col width='21%'>";
+        echo "<col width='79%'>";
+        } // if($mobile_flag == 1)
+        else
+        {
+        echo "<col width='20%'>";
+        echo "<col width='80%'>";
+        } // else
+        ?>
+    </colgroup>
+    <tbody>
+        <tr class="device_control_type">
+            <td class="text-left">공사지역</td>
+            <td>
+                <select onchange="categoryChange(this)" class="form-control" style="width:50%; float:left">
+                    <option value=''>(1) 권역팀 선택</option>
+                    <option value="a">전남팀</option>
+                    <option value="b">전북팀</option>
+                    <option value="c">광주팀</option>
+                </select>
+
+                <select name="cals09" id="cals09" class="form-control" style="width:50%; float:right">
+                    <option value=''>(2) 세부 지역 선택</option>
+                </select>
+
+<script>
+function categoryChange(e) {
+    var good_a = ["서광주","상무","남광주","광주","화순","나주","함평","영광","목포","동목포","하당","무안","목포도서","해남","완도","진도","강진", "장흥", "영암", "그 외"];
+    var good_b = ["북전주","동전주","남전주","전주","팔복","봉동","삼례","무주","진안","장수","군산","동군산","서군산","익산","부송","김제","함열","남원","임실","순창","정읍","고창","부안","신태인","완주", "그 외"];
+    var good_c = ["동광주","본촌","광산","광하남","송정","장성","담양","곡성","순천","북순천","동순천","구례","고흥","보성","벌교","여수","여천","동여수","북여수","광양","서광양", "그 외"];
+    var target = document.getElementById("cals09");
+
+    if(e.value == "a") var d = good_a;
+    else if(e.value == "b") var d = good_b;
+    else if(e.value == "c") var d = good_c;
+
+    target.options.length = 0;
+
+    for (x in d) {
+        var opt = document.createElement("option");
+        opt.value = d[x];
+        opt.innerHTML = d[x];
+        target.appendChild(opt);
+    }
+}
+</script>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</html>

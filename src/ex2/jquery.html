@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type=”text/javascript”>
+function fnCngList(sVal){
+    var f = document.fwrite;
+    var opt = $(”#ca_name option”).length;
+ 
+    if(sVal == ””) {
+        num = new Array(”선택하세요”);
+        vnum = new Array(””);
+    }else if(sVal == ”A코스”) {
+        num = new Array(”오전 10시 ~ 13시”,”오후 14시 ~ 17시”);
+        vnum = new Array(”오전 10시 ~ 13시”,”오후 14시 ~ 17시”);
+    }else if(sVal == ”B코스”) {
+        num = new Array(”오전 10시 ~ 13시”);
+        vnum = new Array(”오전 10시 ~ 13시”);
+    }
+
+    for(var i=0; i<opt; i++) {
+        f.ca_name.options[0] = null;
+    }
+ 
+    for(k=0;k < num.length;k++) {
+        f.ca_name.options[k] = new Option(num[k],vnum[k]);
+    }
+}
+</script>
+
+</head>
+<body>
+ <ul>
+        <li class=”bold”>코스선택</li>
+        <li>
+            <select id=”wr_10” name=”wr_10” class=”required” title=”코스선택” onchange="fnCngList(this.value);">
+                <option value=””>선택하세요</option>
+                <option value=”A코스”>A코스</option>
+                <option value=”B코스”>B코스</option>
+            </select>
+        </li>
+    </ul>
+    <ul>
+        <li class=”bold”>스튜디오 투어시간</li>
+        <li>
+            <select id=”ca_name” name=”ca_name” class=”required” title=”스튜디오 투어시간”>
+                <option value=””>선택하세요</option>
+            </select>
+        </li>
+    </ul>
+</body>
+</html>

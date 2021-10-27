@@ -1,21 +1,21 @@
-package ex2;
+package ex2_if;
 
 import java.util.Scanner;
 
-public class Ex2_94988 {
-
+public class Ex2_9498 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		int A = in.nextInt();
+		int y = in.nextInt();
 		in.close();
-		
-		if(A>=90) System.out.println("A");
-		else if(A>=80) System.out.println("B");
-		else if (A>=70) System.out.println("C");
-		else if(A>=60) System.out.println("D");
-		else System.out.println("F");
+        
+		if(y%4==0) {
+			if(y%400==0) System.out.println("1");
+			else if(y%100==0) System.out.println("0");
+			else System.out.println("1");
+		}
+		else System.out.println("0");
 	}
 
 }
